@@ -1,0 +1,12 @@
+def lucas_lehmer(p):
+    s = 4
+    M = 2**p - 1
+    for _ in range(2, p):
+        s = (s**2 - 2) % M
+    return s == 0
+
+p = int(input("enter a number"))
+if lucas_lehmer(p):
+    print(f"2^{p} - 1 is a Mersenne prime.")
+else:
+    print(f"2^{p} - 1 is not a Mersenne prime.")
